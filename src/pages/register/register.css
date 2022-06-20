@@ -1,0 +1,57 @@
+.rgstrContainer{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1111;
+}
+@keyframes modal {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.rgstrInnerContainer{
+    animation: modal 1.5s forwards;
+
+    width: 35%;
+    background-color: rgb(127, 187, 255);
+    padding: 1.5rem 0;
+    border-radius: .5rem;
+    box-shadow: 0 5px 15px rgb(18, 18, 19);
+    position: relative;
+}
+.inputlabel{
+    display:flex;
+    flex-direction:column;
+    width:70%;
+    margin:1rem auto;
+}
+.inputlabel input{
+    border:none;
+    border-radius:.2rem;
+    padding:.3rem 0;
+    margin-top:.2rem
+}
+.btnrgstr{
+    display:block;
+    background-color:teal;
+    margin:0 auto;
+    border:none;
+    padding:.3rem 1rem;
+    font-size:16px;
+    border-radius:.2rem
+}
+h2{
+    text-align:center;
+}
+.rgstrlog{
+    padding-left:1rem;
+}

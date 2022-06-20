@@ -1,0 +1,29 @@
+.header-Links {
+    background-color: rgba(173, 216, 230, 0.493);
+  }
+  .header-Links ul {
+    list-style: none;
+    display: flex;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .header-Links ul li {
+    transition: all 0.1s ease-in-out;
+  }
+  .header-Links ul li:hover {
+    color: green;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  .link{
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }

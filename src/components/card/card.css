@@ -1,0 +1,32 @@
+  .card-para {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+.card-para button{
+  border: none;
+  outline: none;
+  padding: .1rem;
+  font-size: 16px;
+}  
+  .card-Container {
+    width: 250px;
+    height: 270px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+  .Card-Image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  @media screen and (max-width:600px) {
+    .card-Container{
+      margin-left: 0;
+    }
+  }

@@ -1,0 +1,29 @@
+.cardOuter-Container {
+    display: flex;
+    margin: 1.5rem auto;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+.title{
+    text-align: center;
+  margin-top: 1rem;
+  }
+  .underLine{
+    background-color: black;
+    width: 10%;
+    height: 5px;
+    margin: 0 auto;
+  }
+  @media screen and (max-width:600px) {
+    .cardOuter-Container {
+      justify-content: center;
+    } 
+  }
+  .noProducts{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+  }
