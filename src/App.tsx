@@ -1,3 +1,4 @@
+import './App.css'
 import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
@@ -17,19 +18,27 @@ import PrivateRoute from "./Auth";
 import { useSelector } from "react-redux";
 import ErrorC from "./pages/error/error";
 import Cart from "./pages/CartPage/Cart";
+import Checkout from "./pages/checkout/checkout";
 import Register from './pages/register/register'
+import axios from 'axios';
+
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const {
     genaralReducer: { errMsg },
-  } = useSelector((state: any) => state);
+    AuthReducer:{user}} = useSelector((state: any) => state);
+   
+    
+
   // const privateRoute=useAuth()
   useEffect(() => {
     dispatch<any>(fetchProducts());
     dispatch<any>(fetchSliderData());
     dispatch<any>(fetchLinkData());
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  
   if (errMsg) {
     return (
       <main>
@@ -50,6 +59,9 @@ const App: React.FC = () => {
         </PrivateRoute>
         <PrivateRoute path={"/cart"}>
           <Cart />
+        </PrivateRoute>
+        <PrivateRoute path={"/checkout"}>
+          <Checkout />
         </PrivateRoute>
         <Route path="/category/:item" component={Category} />
 

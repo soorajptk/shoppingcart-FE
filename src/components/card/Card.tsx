@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import {addCart} from '../../apiCalls/apiCalls'
 // import { useGlobalContext } from "../../context";
 import "./card.css";
 import axios from 'axios'
 // import {cartStore} from '../../redux/cart/cartAction'
 // import prdct from '../../model'
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 // interface props{
 //   name:string,
 //   price:string,
@@ -18,18 +19,7 @@ import { useSelector } from "react-redux";
 
 function Card({ product_name, price,product_id,product}:any) {
   const {AuthReducer:{user}}=useSelector((state:any)=>state)
-  
-  const addToCart=async(product_id:any)=>{
-    try {
-      const response=await axios({method:'post',url:"http://localhost:5000/api/v1/product/addcart",headers:{"Authorization":`Bearer ${user.token}`},data:{product_id}})  
-      console.log(response);
-      
-    } catch (error) {
-      console.log(error);
-      
-    }
-    
-  }
+  const dispatch=useDispatch()
   return (
     <div className="card-Container">
       <Link to={`../product/${product_id}`}>
@@ -42,7 +32,7 @@ function Card({ product_name, price,product_id,product}:any) {
           <h4>{product_name}</h4>
           <p>&#8377; {price}</p>
         </div>
-        {user &&    <button onClick={()=>addToCart(product_id)}>Add to Cart</button>}
+        {user &&    <button onClick={()=>dispatch<any>(addCart(product_id))}>Add to Cart</button>}
       </div>
     </div>
   );

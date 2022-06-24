@@ -1,38 +1,14 @@
-import { CART } from "../actionTypes";
-import {CartType,Actions} from '../../model'
+import { CARTSTORE } from "../actionTypes";
+import {Actions} from '../../model'
 const initialState = {
-  CartItems: [],
+  CartItems: {},
 };
-interface initialGenaral{
-  CartItems:CartType[]
-}
 
-export const cartReducer = (state:initialGenaral = initialState, action:Actions) => {
+
+export const cartReducer = (state:any = initialState, action:Actions) => {
   switch (action.type) {
-    case CART:
-      const { id, product } = action.payload;
-      const pro = product.find((item) => item.id === id);
-      if (state.CartItems.length !== 0) {
-        const avail  = state.CartItems.find((item) => item.id === pro?.id);
-        if (avail) {
-          return {
-            ...state,
-            CartItems: state.CartItems.map((item) =>
-              item.id === avail.id ? {...item,amount: item.amount + 1 } : item
-            ),
-          };
-        } else {
-          return {
-            ...state,
-            CartItems: [...state.CartItems, { ...pro, amount: 1 }],
-          };
-        }
-      } else {
-        return {
-          ...state,
-          CartItems: [...state.CartItems, { ...pro, amount: 1 }],
-        };
-      }
+    case CARTSTORE:
+    return {...state,CartItems:action.payload}
     default:
       return state;
   }

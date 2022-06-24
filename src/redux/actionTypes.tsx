@@ -1,6 +1,8 @@
 
 export const SEARCH="SEARCH"
-export const CART="CART"
+export const CARTSTORE="CARTSTORE"
+export const CARTADD="CARTSADD"
+export const CARTDELETE="CARTDELETE"
 export const FETCH_DATA_REQ="FETCH_DATA-REQ"
 export const FETCH_DATA_SUCCESS="FETCH_DATA-SUCCESS"
 export const FETCH_DATA_FAIL="FETCH_DATA-FAIL"

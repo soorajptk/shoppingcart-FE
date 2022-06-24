@@ -38,6 +38,7 @@ export type Actions =
   | { type: "AUTHENTICATION"; payload: any }
   | { type: "MODALTOGGLE"; payload: { toggle: boolean } }
   | { type: "CLOSETOGGLE"; payload: { toggle: boolean } }
+  | { type: "CARTSTORE"; payload: { data:any } }
   | { type: "LOGOUT"; payload: { logged: boolean } };
 
 export type MainState = {

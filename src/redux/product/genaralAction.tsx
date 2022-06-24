@@ -27,10 +27,12 @@ export const fetchProductsReq = () => {
 export const fetchProductsSuccess = (response: { data:any }) => {
   return {
     type: FETCH_DATA_SUCCESS,
-    payload: { products: response.data, isLoading: false },
+    payload: { products: response.data.response , isLoading: false },
   };
 };
-export const fetchProductsFail = () => {
+export const fetchProductsFail = (err:any) => {
+  console.log(err)
+  
   return { type: FETCH_DATA_FAIL, payload: {isLoading: false } };
 };
 export const fetchSlider = (data: sliderData[]) => {

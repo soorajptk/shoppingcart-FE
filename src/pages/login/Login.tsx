@@ -28,8 +28,7 @@ function Login() {
             const {data}=await axios({
                 method:"post",url:"http://localhost:5000/api/v1/auth/login", headers:{},data:{...user}
             })     
-            
-        dispatch(Authaction(data))
+         dispatch(Authaction(data))
         history.push('/dashboard')
         } catch (err) {
             console.log(err)
